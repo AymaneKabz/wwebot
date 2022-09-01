@@ -5,6 +5,7 @@ const client = new Client({
 });
 module.exports = client;
 
+console.log(process.env)
 // Global Variables
 client.commands = new Collection();
 client.slashCommands = new Collection();
@@ -13,4 +14,4 @@ client.config = require("./config.json");
 // Initializing the project
 require("./handler")(client);
 
-client.login(client.config.token);
+client.login(process.env.TOKEN);
